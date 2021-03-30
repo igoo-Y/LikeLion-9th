@@ -1,0 +1,79 @@
+Django-Git 사용법 3/30
+
+git 과 github의 차이: git은 혼자 작업한 정보, github는 git을 공유하는 플랫폼
+
+github 회원가입 후 새 레포 생성(이름, public/private)
+
+vs code와 연결하기
+
+    터미널 창에 아래 명령어 실행
+    echo "# Like-Lion-9th" >> README.md 
+    git init 
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/igoo-Y/Like-Lion-9th.git
+    git push -u origin main
+    
+    위 코드의 의미를 알아보자!
+    echo "# Like-Lion-9th" >> README.md 
+        README.md를 만들고 그 안에 "" 안에 내용을 적어라. 
+        README.md는 프로젝트 사용법, 패키지, 설치법 등을 담는 파일
+
+    git init 
+        현재 디렉토리를 새로운 깃 저장소로 초기화하겠다는 의미
+        이러면 숨김 파일로 깃 관련 파일이 생성됨. 
+        터미널 명령어 ls - al 로 .git 이라는 숨김 파일 확인 가능
+        프로젝트를 생성하면 각 프로젝트에 git init을 해줘야 함.
+        
+    git add
+        파일을 저장하고 기록함
+        1. 저장 파일 선택 
+        2. 선택 파일 저장
+        git에는 staging area 라는 공간이 있음. 저장 파일을 선택해 넣어주고 staging area를 통째로 저장함.
+        git add는 staging area에 파일을 올리는 명령어
+
+        형식: git add 파일1 파일2 파일3 ... / 현재 디렉토리의 모든 파일 추가: git add. 
+        
+        .gitignore : staging area에 올리지 말아야 할 파일들을 넣어주는 파일
+        gitinore.io 는 올리지 말아야 할 파일들을 알려주는 사이트. (프레임워크 검색 후 소스를 복붙)
+    
+    git commit
+        staging area에 올린 파일들을 저장하는 명령어
+
+        형식: git commit -m "메세지"
+        
+        git log로 commit 한 내용 확인/나가기: q
+    
+    git branch
+        현재 작업 중인 프로젝트에서 새로운 분기점을 생성
+        실험, 공동 작업 시 활용
+        git init으로 마스터 브랜치가 자동으로 생성되는데 git branch -M main 은 마스터 브랜치를 main으로 바꾸겠다는 의미. (마스터브랜치 이름 그대로 사용 시 실행할 필요 없음)
+
+        형식: git branch 브랜치이름
+
+        branch 이동
+            git status 로 현재 위치 확인
+            git checkout 옮길브랜치이름  으로 이동
+            git status 로 잘 옮겨졌는지 확인
+
+    git remote
+        깃허브의 레포지토리와 연결하는 명령어
+
+        git remote add origin https://github.com/igoo-Y/Like-Lion-9th.git
+            레포의 주소를 origin이라는 이름으로 연결.
+            이후부터 origin이라는 이름으로 작업물을 업로드/다운로드 가능.
+
+        형식: git remote add remote이름 레포지토리링크
+
+    git push
+        로컬에서 작업한 내용을 Github에 업로드하는 명령어
+
+        형식: git push remote이름 브랜치이름
+
+        
+git init
+git add
+git commit -m "message"
+git remote add [remote 이름][repository 주소]
+git push [remote 이름][branch 이름]
