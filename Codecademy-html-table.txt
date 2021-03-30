@@ -1,0 +1,104 @@
+HTML 테이블
+    테이블 만들기
+        <table></table>
+
+    행(table rows)
+        <table>
+            <tr></tr>
+            <tr></tr>
+        </table>
+    
+    데이터 입력하기(table data)
+        <table>
+            <tr>
+                <td>73</td>
+                <td>81</td>
+            </tr>
+        </table>
+        이렇게 작성하면 1행에 2열로 셀이 만들어짐.
+    
+    table headings
+        <table>
+            <tr>
+                <th></th>
+                <th scope="col">Saturday</th>
+                <th scope="col">Sunday</th>
+            </tr>
+            <tr>
+                <th scope="row">Temperature</th>
+                <td>73</td>
+                <td>81</td>
+            </tr>
+        </table>
+        table heading은 table rows 태그 안에 작성.
+        여기서 scope="col"은 열의 heading 이고, scope="row"는 행의 heading.
+
+    Spanning Columns
+        여러 칼럼을 갖는 데이터를 넣는 경우, colspan 속성을 사용
+        <table>
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+            </tr>
+            <tr>
+                <td colspan="2">Out of Town</td>
+                <td>Back in Town</td>
+            </tr>
+        </table>
+        여기에서 첫번째 row가 Monday, Tuesday, Wednesday 3개인데, 두번째 row에서 colspan="2"를 사용해 Monday와 Tuesday 아래에 Out of Town을 넣어줌.
+
+
+    Spanning Rows
+        마찬가지로 여러 행을 갖는 데이터를 넣는 경우, rowspan 속성을 사용
+        <table>
+            <tr> <!-- Row 1 -->
+                <th></th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+            <tr> <!-- Row 2 -->
+                <th>Morning</th>
+                <td rowspan="2">Work</td>
+                <td rowspan="3">Relax</td>
+            </tr>
+            <tr> <!-- Row 3 -->
+                <th>Afternoon</th>
+            </tr>
+            <tr> <!-- Row 4 -->
+                <th>Evening</th>
+                <td>Dinner</td>
+            </tr>
+        </table>
+
+        Table Body
+            테이블의 자료가 많아지고 테이블이 길어지면 table body 로 관리함.
+            <table>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                    <tr>
+                        <th>Morning</th>
+                        <td rowspan="2">Work</td>
+                        <td rowspan="3">Relax</td>
+                    </tr>
+                    <tr>
+                        <th>Afternoon</th>
+                    </tr>
+                    <tr>
+                        <th>Evening</th>
+                        <td>Dinner</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        Table Head
+            Table Headings는 <thead></thead> 안에 넣어서 관리
+
+        Table Footer
+            <tfoot></tfoot>
+            긴 테이블의 하단을 구분하기 위해 사용함.
+            보통 데이터의 합계, 차이 등을 입력함.

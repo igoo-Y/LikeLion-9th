@@ -1,0 +1,29 @@
+HTML 태그와 속성
+    새 창에서 링크열기
+        <a href="url" target="_blank"></a>
+
+    Relative Page 링크
+        <a href="./contact.html">Contact</a>
+        여기서 . 이 현재 폴더를 의미
+    
+    이미지 링크 만들기
+        <a href></a>태그 사이에 이미지 태그 넣기
+        <a href><img src="url" alt="" /></a>
+
+    페이지 내 링크 만들기
+        id 값 주고, #으로 연결
+        <p id="top">This is the top of the page!</p>
+        <h1 id="bottom">This is the bottom! </h1>
+
+        <ol>
+            <li><a href="#top">Top</a></li>
+            <li><a href="#bottom">Bottom</a></li>
+        </ol>
+
+    공백(whitespace)과 들여쓰기(indentation)
+        웹브라우저는 공백과 들여쓰기를 인식하지 못함. 공백과 들여쓰기는 코드의 가독성 향상을 위함.
+
+    주석처리
+        <!-- This is a comment that the browser will not display. -->
+        <!-- <p> Test Code </p> -->
+

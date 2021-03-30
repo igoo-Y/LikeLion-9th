@@ -1,0 +1,227 @@
+Form
+    Form을 통해 정보를 찾고 모을 수 있음.
+    그런데, 이 정보를 처리하는 곳과 요청 방식을 지정해야 함.
+
+    <form action="/example.html" method="POST">
+    </form>
+
+    여기에서 action 속성은 정보가 보내지는 곳을 결정하고, method는 요청방식을 의미(대문자로 작성하지 않아도 됨).
+
+    form 태그는 자식 요소를 포함할 수 있고, 이를 통해 이 폼이 무엇인지 설명하는 등의 기능을 할 수 있음.
+
+    <form action="/example.html" method="POST">
+    <h1>Creating a form</h1>
+    <p>Looks like you want to learn how to create an HTML form. Well, the best way to learn is to play around with it.</p>
+    </form>
+
+    Text Input
+        <input> 요소로 데이터를 입력받는 필드를 만들어낼 수 있음.
+        <input> 요소의 type 속성은 웹페이지에서 어떻게 보여줄 것인가와 데이터의 종류를 결정함
+
+        type의 value 중 text는 사용자가 텍스트를 입력할 수 있는 텍스트 필드를 만들어줌.
+
+        또한, value 속성으로 폼 안에 디폴트 값을 넣어줄 수 있음.
+
+        <form action="/example.html" method="POST">
+            <input type="text" name="first-text-field" value="already pre-filled">
+        </form>
+
+    Label 붙이기
+        <input> 요소가 무엇인지 설명해주는 label을 붙일 수 있음.
+        <input>과 <label> 두 요소를 연결하기 위해 <input> 에 id 속성을 추가해야 함.
+        그리고 <label for="id의 value">로 연결
+
+        <form action="/example.html" method="POST">
+            <label for="meal">What do you want to eat?</label>
+            <br>
+            <input type="text" name="food" id="meal">
+        </form>
+
+    Password Input
+        Password와 같은 보안 관련 정보 입력 폼은 type="password" 를 통해 input 태그를 작성.
+        패스워드 타입으로 만들면 입력받는 정보가 * 이나 • 으로 보여짐.
+
+        <form>
+            <label for="user-password">Password: </label>
+            <input type="password" id="user-password" name="user-password">
+        </form>
+
+    Number Input
+        숫자 입력은 type="number"
+        step 속성으로 값을 올리고 내리는 화살표를 만들 수 있음.
+        step 의 value는 증감분의 크기.
+
+        <form>
+            <label for="years"> Years of experience: </label>
+            <input id="years" name="years" type="number" step="1">
+        </form>
+
+    Range Input
+        <input> 요소의 type에 range를 넣어주면, 범위를 선택할 수 있는 바가 생김.
+        추가로 범위의 최소, 최대를 설정하기 위해 min, max 속성을 넣어주야 함.
+
+        <form>
+            <label for="volume"> Volume Control</label>
+            <input id="volume" name="volume" type="range" min="0" max="100" step="1">
+        </form>
+
+    Checkbox Input
+        <input> 요소의 type에 checkbox를 하면, 체크박스를 만들 수 있음.
+        이때, value 속성로 체크박스의 값을 넣어줌.
+
+        <form>
+            <p>Choose your pizza toppings:</p>
+            <label for="cheese">Extra cheese</label>
+            <input id="cheese" name="topping" type="checkbox" value="cheese">
+            <br>
+            <label for="pepperoni">Pepperoni</label>
+            <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+            <br>
+            <label for="anchovy">Anchovy</label>
+            <input id="anchovy" name="topping" type="checkbox" value="anchovy">
+        </form>
+
+        여기서 세 input 요소는 topping이라는 같은 name을 갖고 있지만, id 값은 label 과 일치해야 함.
+
+    Radio Button Input
+        여러 개 중 하나를 고르는 경우, type에 radio를 사용함.
+        
+        <form>
+            <p>What is sum of 1 + 1?</p>
+            <input type="radio" id="two" name="answer" value="2">
+            <label for="two">2</label>
+            <br>
+            <input type="radio" id="eleven" name="answer" value="11">
+            <label for="eleven">11</label>
+        </form>
+
+        체크박스처럼 radio buttons는 자기가 가진 value를 보여주지 않음. 대신 label 태그와 연결하여 radio button의 value를 보여줌.
+        radio buttons를 그룹핑하려면 해당 버튼들에 name 속성에 같은 값을 주면 됨.
+
+    Dropdown list
+        목록 중 하나는 선택하게 하는 방법.
+        dropdown list를 만들기 위해 <select> 요소를 사용하고, 리스트를 채우기 위해 <option> 요소와 value 속성을 사용.
+
+        <form>
+            <label for="lunch">What's for lunch?</label>
+            <select id="lunch" name="lunch">
+                <option value="pizza">Pizza</option>
+                <option value="curry">Curry</option>
+                <option value="salad">Salad</option>
+                <option value="ramen">Ramen</option>
+                <option value="tacos">Tacos</option>
+            </select>
+        </form>
+
+        여기서 form을 submit 하면 해당 정보는 <select>의 name 과 <option> 의 value 형태로 전달됨.
+        예를 들어, Pizza 를 선택했다면, 정보는 lunch=pizza 로 날아감.
+
+    Datalist input
+        선택지가 많아졌을 경우 사용. 또 유저가 직접 선택지를 입력해서 고르게 하는 경우에도 사용.
+        <datalist> 요소는 <input type="text"> 와 사용함. <input> 요소가 datalist 에서 고를 텍스트 필드를 생성해줌.
+
+        <form>
+        <label for="city">Ideal city to visit?</label>
+        <input type="text" list="cities" id="city" name="city">
+        
+        <datalist id="cities">
+            <option value="New York City"></option>
+            <option value="Tokyo"></option>
+            <option value="Barcelona"></option>
+            <option value="Mexico City"></option>
+            <option value="Melbourne"></option>
+            <option value="Other"></option>  
+        </datalist>
+        </form>
+
+        이때, input 요소의 list 속성과 datalist 의 id 로 두 요소를 연결함.
+        <select> 와 <datalist>의 차이점은 <datalist> 가 <input>과 연결되어 있기 때문에, 선택지에서 원하는 것이 없다면 사용자가 직접 정보를 입력할 수 있음.
+        그리고 datalist에서는 option에 내용을 입력하지 않음.
+
+    Textarea element
+        input type="text" 는 한 줄의 텍스트 필드. 더 많은 텍스트를 입력받으려면 input 대신 textarea 요소를 사용.
+        이때 rows, cols 속성을 이용해 textarea 의 양을 정할 수 있음.
+
+        <form>
+            <label for="blog">New Blog Post: </label>
+            <br>
+            <textarea id="blog" name="blog" rows="5" cols="30">
+            </textarea>
+        </form>
+
+        만약 textarea에 디폴트 값을 넣고 싶다면, 아래와 같이 넣으면 됨.
+        <textarea>Adding default text</textarea>
+
+    Submit form
+        정보를 입력받고 제출하는 폼 만들기
+
+        <form>
+            <input type="submit" value="Send">
+        </form>
+
+        여기에서 value 안의 값이 화면에서 버튼 위에 보여짐.
+
+Form Validation
+    Validation 이란 사전에 입력받은 데이터와 요청받은 데이터의 검증.
+    
+    Validation 의 종류
+        1. server-side validation
+            다른 서버에서 데이터가 전송될 때 일어남. 
+            ex) 로그인 페이지. 로그인 페이지의 폼에서 username 과 password 를 입력받으면 서버에서 일치 여부를 체크.
+        
+        2. client-side validation
+            사용자가 브라우저에서 데이터를 체크하길 원할 때 사용함. 이는 데이터가 서버로 전송되기 전 단계에서 일어남.
+            각 브라우저마다 검증을 다르게 실행하지만, 결과는 같게 나옴. 이는 HTML5 의 내장된 client-side validation 기능으로 가능한 것. 
+            이를 통해 정보를 서버에 보내고 검증 결과를 되돌려 받는 시간을 절약할 수 있음. 또한 악성 코드나 유저로부터 서버를 보호할 수 있음.
+
+    Requiring an Input(필수입력 정보)
+        form 에는 선택사항이 아닌 필드가 있음(필수입력 정보). 이를 위해 input 요소에 required 속성을 사용함.
+
+        <form action="/example.html" method="POST">
+            <label for="allergies">Do you have any dietary restrictions?</label>
+            <br>
+            <input id="allergies" name="allergies" type="text" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    
+        이때, 브라우저마다 스타일링은 다르지만 필수정보를 입력하지 않으면 제출할 수 없음.
+
+    Set a Minimum and Maximum
+        숫자 필드에서 min, max 속성을 이용해 최대, 최소 값을 설정할 수 있음.
+
+        <form action="/example.html" method="POST">
+            <label for="guests">Enter # of guests:</label>
+            <input id="guests" name="guests" type="number" min="1" max="4">
+            <input type="submit" value="Submit">
+        </form>
+
+        이때, 이 범위를 벗어나면 경고 메세지가 나옴.
+
+    Checking Text Length
+        텍스트 필드에서 입력 값을 제한하려면 minlength 와 maxlength 속성을 주면 됨.
+
+        <form action="/example.html" method="POST">
+            <label for="summary">Summarize your feelings in less than 250 characters</label>
+            <input id="summary" name="summary" type="text" minlength="5" maxlength="250" required>
+            <input type="submit" value="Submit">
+        </form>
+
+    Matching a Pattern
+        텍스트가 이전에 어떻게 입력됬는지도 검증할 수 있음.
+        사용자가 데이터 입력 시 특정 가이드라인을 따르게 하려면, pattern 속성을 이용하고 정규표현식을 넣으면 됨.
+        정규표현식은 패턴을 구성하는 일련의 문자열. 만약 정규표현식과 input 값이 일치하면 폼을 제출할 수 있음.
+
+        ex) 신용카드 숫자 검증
+            신용카드 번호는 0-9 사이 숫자로, 14-16개로 구성되어 있음. 이때 정규표현식은 [0-9]{14,16}
+
+            <form action="/example.html" method="POST">
+                <label for="payment">Credit Card Number (no spaces):</label>
+                <br>
+                <input id="payment" name="payment" type="text" required pattern="[0-9]{14,16}">
+                <input type="submit" value="Submit">
+            </form>
+
+        이때 사용자가 input에 정규표현식과 맞지 않는 숫자를 입력하면 제출할 수 없고, 경고 메세지가 출력됨.
+
+        만약 정규표현식으로 오직 문자와 숫자(특수문자를 제외)만 사용하게 하고 싶다면, pattern="[a-zA-Z0-9]+" 를 주면 됨.
