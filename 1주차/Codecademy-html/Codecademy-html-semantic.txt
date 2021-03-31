@@ -1,0 +1,139 @@
+Semantic HTML
+    semantic = relating to meaning 즉, opening tag 와 closing 태그 사이에 컨텐츠(정보)를 제공
+    예를 들어, header information을 제공할 때, 단순히 <div> 와 <span> 을 나열하는 것이 아니라, <header>로 구분짓는 방법.
+
+    Semantic HTML 을 사용하는 이유
+        1. 접근성: semantic html 은 모바일 디바이스 뿐 아니라 장애를 가진 사람들에게도 접근성이 높음. 이는 사용자와 브라우저가 코드를 해석하기 쉽기 때문.
+        2. SEO: 웹사이트의 SEO(Search Engine Optimization)를 향상시킴. 즉, 웹사이트의 컨텐츠나 중요한 정보를 명확히 찾아낼 수 있음.
+        3. 이해하기 쉬움: 다른 웹 개발자들이 코드를 읽기 쉽게 해줌.
+
+    Header and Nav
+        <header>는 보통 네비게이션 링크들이나 소개 컨텐츠를 담는 <h1> ~ <h6> 를 포함하는 컨테이너.
+
+        <header>
+            <h1>
+                Everything you need to know about pizza!
+            </h1>
+        </header>
+
+        <header> 
+            <nav>
+                <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>      
+                </ul>
+            </nav>
+        </header>
+
+        <nav> 태그는 네비게이션 링크들에 이름표를 붙여주는 방법. 개발자, 사용자, 브라우저 등 모두에게 읽기 쉬운 코드.
+
+    Main and Footer
+        <main> 과 <footer> 는 <header>, <nav> 와 함께 웹 개발 기준에 맞춰 요소들이 어디에 위치하는 지 알려줌.
+        <main> 은 웹페이지의 주요 컨텐츠를 요약/압축할 때 사용. 웹페이지의 주요 내용을 담는 다는 점에서 <footer> 나 <nav> 와 구분됨.
+
+        <main>
+            <header>
+                <h1>Types of Sports</h1>
+            </header>
+            <article>
+                <h3>Baseball</h3>
+                <p>
+                The first game of baseball was played in Cooperstown, New York in the summer of 1839.
+                </p>
+            </article>
+        </main>
+
+        위와 같이, <main> 은 <article> 이나 <header> 태그를 자식 요소로 가질 수 있고, 가장 중요한 정보들을 담음.
+
+        <footer> 는 Contact information, Copyright information, Terms of use, Site Map, Reference to top of page links 등을 담음.
+        <main> 과 구분되어 보통 웹페이지 하단에 위치.
+
+        <footer>
+            <p>Email me at Codey@Codecademy.com</p>
+        </footer>
+
+    Article and Section
+        <article> 과 <section> 은 body를 구성함.
+        <section> 은 chapters, headings, area 등 문서의 요소를 정의함. 내용 구분 시에도 사용.
+
+        <section>
+            <h2>Fun Facts About Cricket</h2> 
+        </section>
+
+        <article> 은 articles, blogs, comments, magazines 등의 컨텐츠를 담는 태그. 즉, article 컨텐츠의 시작과 끝을 구분.
+        
+            <section>
+                <h2>Fun Facts About Cricket</h2>
+                <article>
+                    <p>A single match of cricket can last up to 5 days.</p>
+                </article>
+            </section>
+
+            위의 예시처럼, <section> 은 <article> 을 포함할 수 있고 <article> 도 <section> 을 포함할 수 있음.
+
+    The Aside Element(별도 구획 요소)
+        <aside> 요소는 다른 요소를 강조하는 추가 요소를 표현할 때 사용함. 하지만, 주요 컨텐츠에 들어갈 정도로 중요하진 않은 정보.
+        <article> 이나 <section> 과 나란히 사용할 수 있음.
+
+        <aside> 요소의 사용처: 참고문헌, 각주, 댓글, 인용구, 편집 사이드바, 추가정보 등
+
+        <article>
+            <p>The first World Series was played between Pittsburgh and Boston in 1903 and was a nine-game series.</p>
+        </article>
+        <aside>
+            <p>
+            Babe Ruth once stated, “Heroes get remembered, but legends never die.” 
+            </p>
+        </aside>
+
+        위의 예시처럼 <article> 은 주요 정보이지만, <aside> 의 내용은 이해하는데 꼭 필요한 정보는 아님.
+
+    Figure and Figcaption
+        <figure> 와 <figcaption> 은 이미지나 일러스트레이션을 추가할 때 사용.
+        <figure> 는 image, illustration, diagram, code snippet 등의 메인 컨텐츠의 참조 요소를 넣을 때 사용함. 또한, <figure> 는 단독으로 위치할 수도 있음.
+
+        <figure>
+            <img src="overwatch.jpg"/>
+        </figure>
+
+        <figcaption> 은 <figure> 에 담긴 미디어에 부가설명을 해줄 때 사용. 따라서 보통 <figure> 안에 위치.
+        줄이 변경되는 <p> 태그와 달리 <figcaption> 은 이미지와 함게 그룹핑하기 유용함.
+
+        <figure>
+            <img src="overwatch.jpg">
+            <figcaption>This picture shows characters from Overwatch.</figcaption>
+        </figure>
+
+    Audio and Attributes
+        <audio> 는 문서에 오디오 컨텐츠를 넣을 때 사용하고, src 속성을 이용해 링크를 작성함.
+
+        <audio>
+            <source src="iAmAnAudioFile.mp3" type="audio/mp3">
+        </audio>
+
+        위의 예시처럼 <audio> 태그 안에 source 요소를 사용하는데 <source> 는 오디오 링크를 포함함. 그리고 type을 지정해줌.
+
+        Attributes
+            속성은 요소에 대해 추가 정보를 제공함.
+            특히, <audio> 의 속성 중에서 controls, src 가 많이 사용됨.
+
+                controls: 재생, 음소거 등 오디오 컨트롤러를 자동으로 생성해줌.
+                src: 오디오 파일의 url을 특정해줌.
+            
+            <audio autoplay controls>
+
+    Video and Embed
+        <video> 를 이용해 웹사이트에 영상을 추가할 수 있음.
+        속성으로 
+            controls: 재생/중지 버튼, 볼륨 컨트롤러, 풀스크린 옵션 등을 제공.
+            autoplay: 페이지가 로딩되는 대로 자동 재생.
+            loop: 반복 재생
+        
+        <video src="coding.mp4" controls>Video not supported</video>
+
+        여기에서 Video not supported 라는 텍스트는 브라우저가 영상을 보여주지 못할 경우에만 나타남.
+
+        <embed> 는 영상, 오디오, gif 등 외부 소스의 미디어를 넣을 수 있도록 해줌.
+        <video> 와 달리 self-closing 태그임.
+
+        <embed src="download.gif"/>
