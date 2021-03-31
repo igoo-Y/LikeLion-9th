@@ -1,0 +1,16 @@
+Bootstrap
+    CSS/JavaScript 기반 웹프레임워크. 오픈소스. 반응형 웹 지원. 브라우저 호환성.
+
+    시작하기(http://bootstrapk.com/getting-started/)
+
+        1. 위 홈페이지의 부트스트랩 CDN 코드를 <head> 태그 안에 복붙.
+        2. jQuery 다운받기
+            http://code.jquery.com/
+
+            최신 버전의 코드를 <head> 태그 안에 복붙.
+
+    CSS, 콤포넌트 등 탭에서 다양한 것들을 가져올 수 있음.
+        컨테이너: 화면 양쪽에 여백을 생성.
+            <div class="container"></div>
+
+        버튼, 아이콘, 네비게이션 바 등

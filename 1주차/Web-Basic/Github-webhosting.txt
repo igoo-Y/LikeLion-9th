@@ -5,8 +5,18 @@ Github
         3. 협업
         4. Web Hosting: 무료로 간단히 웹호스팅 가능.
     
-     Repository 만들기
+     Repository 생성 후 배포
         repository 는 코드를 저장할 수 있는 저장소
 
         * repository name 작성 시, <아이디>.github.io 형식 지키기!
 
+        repository 화면에서 uploading an existiong file 클릭.
+
+        사전에 만든 웹사이트를 드래그 앤 드롭.
+
+        이때, 반드시 index.html 파일이 있도록 할 것. (깃허브는 index.html이 첫페이지라고 간주하기 때문)
+
+        commit changes 에는 변경사항 등을 메모 후 commit changes 버튼 클릭.
+
+        Settings 하단에 GitHub Pages 에 url 이 나옴.
+        이렇게 배포한 사이트를 '깃허브 페이지'라고 말함.
