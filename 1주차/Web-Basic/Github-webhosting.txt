@@ -1,0 +1,12 @@
+Github
+    Github의 기능
+        1. Code 저장
+        2. Undo
+        3. 협업
+        4. Web Hosting: 무료로 간단히 웹호스팅 가능.
+    
+     Repository 만들기
+        repository 는 코드를 저장할 수 있는 저장소
+
+        * repository name 작성 시, <아이디>.github.io 형식 지키기!
+
